@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 import { AiOutlineMenu, AiOutlineClose, AiOutlineSearch } from "react-icons/ai";
 import { BsFillCartFill, BsPerson } from "react-icons/bs";
-import {TbTruckReturn } from "react-icons/tb";
+import { TbTruckReturn } from "react-icons/tb";
 import { FaUserFriends, FaGoogleWallet } from "react-icons/fa";
-import {MdHelp, MdOutlineFavorite} from "react-icons/md";
+import { MdHelp, MdOutlineFavorite } from "react-icons/md";
 
 const TopNav = () => {
   const [sideNav, setSideNav] = useState(false);
