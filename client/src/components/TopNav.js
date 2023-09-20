@@ -8,7 +8,6 @@ import {MdHelp, MdOutlineFavorite} from "react-icons/md";
 
 const TopNav = () => {
   const [sideNav, setSideNav] = useState(false);
-  console.log(sideNav);
 
   return (
     <div className="max-w-[1520px] mx-auto flex justify-between items-center p-4">
@@ -17,7 +16,7 @@ const TopNav = () => {
           <AiOutlineMenu size={25} />
         </div>
         <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2">
-          Yum<span className=" text-orange-700 text-bold">Eats</span>
+          Yum<span className="font-bold">Eats</span>
         </h1>
         <div className="hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]">
           <p className="bg-orange-700 text-white rounded-full p-2 text-bold">
@@ -41,7 +40,10 @@ const TopNav = () => {
       </button>
 
       {sideNav ? (
-        <div className="bg-black/60 fixed w-full h-screen top-0 left-0 z-10"></div>
+        <div
+          className="bg-black/60 fixed w-full h-screen top-0 left-0 z-10"
+          onClick={() => setSideNav(!sideNav)}
+        ></div>
       ) : (
         ""
       )}
@@ -59,7 +61,7 @@ const TopNav = () => {
           className="absolute right-4 top-4 cursor-pointer"
         />
         <h2 className="text-2xl p-4">
-          Yum<span className=" text-orange-700 text-bold">Eats</span>
+          Yum<span className=" text-orange-700 font-bold">Eats</span>
         </h2>
         <nav className="">
           <ul className="flex flex-col p-4 text-gray-900">
