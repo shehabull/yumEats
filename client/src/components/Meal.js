@@ -3,7 +3,15 @@ import { ArrowSmRightIcon } from "@heroicons/react/outline";
 import { mealData } from "../data/data";
 
 const Meal = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [foods, setFoods] = useState(mealData);
+
+  const fillterCat = (category) => {
+    setFoods(
+      mealData.filter((item) => {
+        return item.category === category;
+      })
+    );
+  };
 
   return (
     <div className="max-w-[1520px] py-4 px-4 mx-auto">
@@ -11,8 +19,37 @@ const Meal = () => {
         Our Meal
       </h1>
 
+      <div className="flex justify-center lg:flex-row flex-col">
+        <div className="flex justify-center">
+          <button
+            onClick={() => setFoods(mealData)}
+            className="m-1 border-orange-700 text-white bg-orange-700 hover:bg-white hover:text-orange-700 hover:border-orange-700"
+          >
+            All
+          </button>
+          <button
+            onClick={() => fillterCat("pizza")}
+            className="m-1 border-orange-700 text-white bg-orange-700 hover:bg-white hover:text-orange-700 hover:border-orange-700"
+          >
+            Pizza
+          </button>
+          <button
+            onClick={() => fillterCat("chicken")}
+            className="m-1 border-orange-700 text-white bg-orange-700 hover:bg-white hover:text-orange-700 hover:border-orange-700"
+          >
+            chicken
+          </button>
+          <button
+            onClick={() => fillterCat("Salad")}
+            className="m-1 border-orange-700 text-white bg-orange-700 hover:bg-white hover:text-orange-700 hover:border-orange-700"
+          >
+            Salad
+          </button>
+        </div>
+      </div>
+
       <div className="grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 gap-6">
-        {mealData.map((item) => (
+        {foods.map((item) => (
           <div
             key={item.id}
             className="border-none hover:scale-105 duration-300 py-4"

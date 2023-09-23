@@ -10,7 +10,7 @@ const TopPicks = () => {
         Top Picks
       </h1>
 
-      <div className="hidden lg:flex max-w[1520px] m-auto px-2">
+      <div className="hidden lg:flex max-w-[1520px] mx-auto px-2">
         <Splide
           options={{ perPage: 4, gap: "0.5rem", grag: "free", arrows: false }}
         >
