@@ -102,7 +102,7 @@ export const mealData = [
     price: '$140',
   },
   {
-    id: 8,
+    id: 18,
     name: 'African Salad',
     category: 'Salad',
     image:
